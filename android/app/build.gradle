@@ -21,20 +21,16 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace "com.example.tourmate"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-     aaptOptions {
-        noCompress 'tflite'
-        noCompress 'lite'
     }
 
     kotlinOptions {
